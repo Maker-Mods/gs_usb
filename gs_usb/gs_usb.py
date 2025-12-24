@@ -50,7 +50,7 @@ class GsUsb:
         self.gs_usb.reset()
 
         # Detach usb from kernel driver in Linux/Unix system to perform IO
-        if "windows" not in platform.system().lower() and self.gs_usb.is_kernel_driver_active(
+        if "windows" not in platform.system().lower() and "darwin" not in platform.system().lower() and self.gs_usb.is_kernel_driver_active(
             0
         ):
             self.gs_usb.detach_kernel_driver(0)
